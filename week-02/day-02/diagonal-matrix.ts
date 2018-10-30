@@ -1,8 +1,7 @@
 'use strict';
-export { };
+export{};
 
 let n: number = 5;
-let counter: number = 0;
 let row: string = "";
 let matrix: string[] = [];
 
