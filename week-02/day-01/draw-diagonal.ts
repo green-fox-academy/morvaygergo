@@ -9,7 +9,7 @@ let space2: string = "";
 
 if (lineCount % 2 == 0) {
     console.log("I can only draw it with odd numbers!")
-} else
+} else {
     for (let i: number = 0; i < lineCount; i++) {
         border = border + "%"
     }
