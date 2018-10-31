@@ -3,7 +3,7 @@ export{};
 
 let animals: string[] = ["koal", "pand", "zebr"];
 
-animals.forEach(function(item, index, array) {
+animals.forEach((item, index, array) => {
     array[index] = item + "a";
 });
 

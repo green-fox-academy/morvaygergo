@@ -1,7 +1,7 @@
 'use strict';
 export{};
 
-function unique(arr) {
+function unique(arr: number[]): number[] {
     let length: number = arr.length;
     let sorted: number[] = arr.sort();
     for (let i: number = 0; i < length; i++) {
