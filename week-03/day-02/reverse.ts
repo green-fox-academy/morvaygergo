@@ -5,7 +5,7 @@ let reversed: string = '.eslaf eb t\'ndluow ecnetnes siht ,dehctiws erew eslaf d
 
 function reverse (str:string): string {
   return str.split('').reverse().join('');
-}
+};
 
 
 console.log(reverse(reversed));
