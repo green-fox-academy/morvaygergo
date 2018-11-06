@@ -15,4 +15,7 @@ let hashmap = {
   3: 'say goodbye '
 };
 
-console.log(out)
+
+for (let i in notSoCrypticMessage) {
+  console.log(hashmap[notSoCrypticMessage[i]]);
+};
