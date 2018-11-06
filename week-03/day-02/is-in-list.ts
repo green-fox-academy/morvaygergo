@@ -12,4 +12,4 @@ function checkNums(arr: number[]): boolean {
   return booleans.reduce((a: boolean, b: boolean) => a && b);
 };
 
- console.log(checkNums(check));
+console.log(checkNums(check));
