@@ -31,7 +31,7 @@ if (credits <= 50 && isBonus == false) {
     c -= 2
 } else if (credits <= 50 && isBonus == false) {
     c -= 1
-} else if (isBonus == true) {
+//} else if (isBonus == true) {
     c = c
 }
 

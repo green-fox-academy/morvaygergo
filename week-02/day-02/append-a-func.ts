@@ -1,5 +1,5 @@
 'use strict';
-export{};
+export { };
 
 let typo: string = "Chinchill";
 
