@@ -14,7 +14,7 @@ function containsSeven(arr: number[]): string {
 console.log(containsSeven(numbers));
 
 function containsSeven2(arr: number[]): string {
-  if (numbers.some( (e) => e === 7)) {
+  if (numbers.some((e) => e === 7)) {
     return 'Hooorrray!'
   } else {
     return 'Noooooooo!'
