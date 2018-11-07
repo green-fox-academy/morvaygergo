@@ -3,14 +3,14 @@
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
-function center(x: number, y: number) {
+function drawline(x: number, y: number) {
   ctx.beginPath();
-  ctx.strokeStyle = "green";
+  ctx.strokeStyle = "red";
   ctx.moveTo(x, y);
-  ctx.lineTo(300, 200);
+  ctx.lineTo(x + 50, y);
   ctx.stroke();
 };
 
 for (let i: number = 0; i < 3; i++) {
-  center(100 + i * 10, 100 + i * 15);
+  drawline(100 + i * 10, 100 + i * 15);
 };
