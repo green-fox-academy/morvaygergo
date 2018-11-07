@@ -11,11 +11,19 @@ const students: any[] = [
 ];
 
 let candies: number[] = [];
+let age: number[] = [];
+
+let adder = (base, current) => base + current;
 
 for (let i = 0; i < students.length; i++) {
   candies.push(students[i].candies);
 };
 
-let adder = (base, current) => base + current;
+for (let i = 0; i < students.length; i++) {
+  if (students[i].candies < 5) {
+    age.push(students[i].age);
+  };
+};
 
 console.log(candies.reduce(adder));
+console.log(age.reduce(adder));
