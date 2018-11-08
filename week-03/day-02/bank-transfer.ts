@@ -19,14 +19,27 @@ function getNameAndBalance(account: number) {
   return data;
 };
 
-// function finder(arr, ) {
-//   return arr.name ===
-// };
-
-function transferAmount(accounts: any[], from: number, to: number, cash: number) {
-
+function check(arr, key) {
+  return arr.find(data => data.accountNumber === key)
 };
 
 
 
+function transferAmount(list: any[], from: number, to: number, cash: number) {
+  if (check(list, from) && check(list, to)) {
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].accountNumber === from) {
+        list[i].balance -= cash;
+      } else if (list[i].accountNumber === to) {
+        list[i].balance += cash;
+      }
+    }
+   } else {
+    console.log("404 - account not found");
+  }
+  console.log(list);
+}
+check(accounts, 11234543 )
 console.log(getNameAndBalance(11234543));
+
+transferAmount(accounts, 11256447534543, 43546731, 200000000);
