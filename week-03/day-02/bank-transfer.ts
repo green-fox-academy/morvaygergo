@@ -34,12 +34,12 @@ function transferAmount(list: any[], from: number, to: number, cash: number) {
         list[i].balance += cash;
       }
     }
-   } else {
+  } else {
     console.log("404 - account not found");
   }
   console.log(list);
 }
-check(accounts, 11234543 )
+check(accounts, 11234543)
 console.log(getNameAndBalance(11234543));
 
 transferAmount(accounts, 11256447534543, 43546731, 200000000);
