@@ -30,7 +30,7 @@ for (let i = 0; i < queue.length; i++) {
   }
 };
 
-console.log (queue);
-console.log (watchlist);
-console.log (canEnter);
-console.log (securityAlcoholLoot);
+console.log(queue);
+console.log(watchlist);
+console.log(canEnter);
+console.log(securityAlcoholLoot);
