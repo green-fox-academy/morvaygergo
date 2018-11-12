@@ -4,19 +4,19 @@ const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
 function linePlay1(color: string, i: number, min: number, max: number) {
-    ctx.strokeStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(min, i);
-    ctx.lineTo(i + 10, max);
-    ctx.stroke();
+  ctx.strokeStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(min, i);
+  ctx.lineTo(i + 10, max);
+  ctx.stroke();
 };
 
 function linePlay2(color: string, i: number, min: number, max: number) {
-    ctx.strokeStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(i, min);
-    ctx.lineTo(max, i + 10);
-    ctx.stroke();
+  ctx.strokeStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(i, min);
+  ctx.lineTo(max, i + 10);
+  ctx.stroke();
 };
 
 for (let i = 0; i < 200; i += 10) {
