@@ -1,3 +1,6 @@
+'use strict';
+export { };
+
 function divideTen(n: number): number {
   if (n === 0) {
     throw new TypeError('fail')
