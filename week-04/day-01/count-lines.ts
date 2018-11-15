@@ -14,7 +14,7 @@ function readFromFile(fileName: string): string {
 function lineCounter () {
   const fileContent: string = readFromFile('my-file3.txt');
   if (fileContent === null) {
-    return 0
+    return 0;
   } else {
     return fileContent.split('\n').length;
   };
