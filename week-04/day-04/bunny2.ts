@@ -8,8 +8,8 @@ function monsterBunnyCounter(n: number): number {
     return 3 + monsterBunnyCounter(n - 1);
   } else {
     return 2 + monsterBunnyCounter(n - 1);
-    };
   };
+};
 
 console.log(monsterBunnyCounter(4));
 console.log(monsterBunnyCounter(8));
