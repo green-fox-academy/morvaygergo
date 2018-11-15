@@ -3,16 +3,20 @@ export { };
 
 const fs = require('fs');
 
-function fileReader() {
+function readFromFile(fileName: string): string {
   try {
-    let fileContent = fs.readFileSync('my-file2.txt', 'utf-8');
-    if (!fileContent) {
-      throw new ReferenceError('Unable to read file');
-    };
-    console.log(fileContent);
+    return fs.readFileSync(fileName, 'utf-8');
   } catch(e) {
-    console.log(e);
+    console.log('Unable to read file - ' + e);
+    return null;
   };
 };
 
-fileReader();
+function printLines() {
+  const fileContent: string = readFromFile('my-file.txt');
+  fileContent.split('\n').forEach(function(row) {
+    console.log(row);
+  });
+};
+
+printLines();
