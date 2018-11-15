@@ -3,9 +3,21 @@ export { };
 
 const fs = require('fs');
 
-function fileReader(fileName: string): number {
-  let fileContent = fs.readFileSync(fileName, 'utf-8');
-  return fileContent.split('\n').length;
+function readFromFile(fileName: string): string {
+  try {
+    return fs.readFileSync(fileName, 'utf-8');
+  } catch(e) {
+    return null;
+  };
 };
 
-console.log(fileReader('my-file3.txt'));
+function lineCounter () {
+  const fileContent: string = readFromFile('my-file3.txt');
+  if (fileContent === null) {
+    return 0
+  } else {
+    return fileContent.split('\n').length;
+  };
+};
+
+console.log(lineCounter());
