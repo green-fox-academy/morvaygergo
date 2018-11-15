@@ -6,8 +6,8 @@ const fs = require('fs');
 function readFromFile(fileName: string): string {
   try {
     return fs.readFileSync(fileName, 'utf-8');
-  } catch(e) {
-    console.log('Unable to read file - ' + e);
+  } catch {
+    console.log(`Unable to read file: ${fileName}`);
     return null;
   };
 };
