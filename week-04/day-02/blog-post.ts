@@ -1,5 +1,3 @@
-import { doesNotReject } from "assert";
-
 'use strict';
 export { };
 
