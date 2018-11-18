@@ -12,9 +12,9 @@ class Station {
   refill(car: Car): void {
     this.gasAmount -= car.capacity;
     car.gasAmount = car.capacity;
-  };
+  }
 
-};
+}
 
 class Car {
 
@@ -25,7 +25,7 @@ class Car {
     this.gasAmount = 0;
     this.capacity = 100;
   }
-};
+}
 
 let station = new Station;
 let car = new Car;
