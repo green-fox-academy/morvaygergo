@@ -28,16 +28,18 @@ print(dominoes);
 
 let snake: Domino[];
 
-while (dominoes !== []) {
-  dominoes.forEach(function (value: Domino, index: number, array: Domino[]) {
-    if (snake === []) {
-      snake.push(array[index]);
-      array.splice(index, 1);
-    } else if (snake[snake.length - 1].values[1] === array[index].values[0]) {
-      snake.push(array[index]);
-    }
-    console.log(snake);
-  })
-}
+console.log(typeof dominoes);
+
+// while (dominoes !== []) {
+//   dominoes.forEach(function (value: Domino, index: number, array: Domino[]) {
+//     if (snake === []) {
+//       snake.push(array[index]);
+//       array.splice(index, 1);
+//     } else if (snake[snake.length - 1].values[1] === array[index].values[0]) {
+//       snake.push(array[index]);
+//     }
+//     console.log(snake);
+//   })
+// }
 
 ///TypeError: Cannot read property 'length' of undefined
