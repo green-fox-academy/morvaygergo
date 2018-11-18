@@ -1,7 +1,7 @@
 'use strict';
-export { };
+export { Sharpie };
 
-class sharpie {
+class Sharpie {
 
   color: string;
   width: number;
@@ -14,13 +14,13 @@ class sharpie {
   };
 
   use(): void {
-    this.inkAmount -= 1;
+    this.inkAmount -= 100;
   };
 
 };
 
-let mySharpie = new sharpie('orange', 10);
+let mySharpie = new Sharpie('orange', 10);
 
-console.log(mySharpie);
-mySharpie.use();
-console.log(mySharpie);
+// console.log(mySharpie);
+// mySharpie.use();
+// console.log(mySharpie);
