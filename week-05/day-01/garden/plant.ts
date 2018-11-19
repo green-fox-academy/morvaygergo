@@ -2,15 +2,15 @@
 
 export class Plant {
 
-  protected color: string;
-  protected waterAmount: number;
+  readonly color: string;
+  waterAmount: number;
 
   constructor(color: string) {
     this.color = color;
     this.waterAmount = 0;
   }
 
-  getWatered(water: number) {
+  getWatered(water: number): void {
     this.waterAmount += water;
   }
 }

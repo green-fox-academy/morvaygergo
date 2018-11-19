@@ -8,9 +8,8 @@ export class Tree extends Plant {
     super(color);
   }
 
-  getWatered(water: number) {
+  getWatered(water: number): void {
     super.getWatered(water);
     this.waterAmount += water * 0.4;
   }
-
 }
