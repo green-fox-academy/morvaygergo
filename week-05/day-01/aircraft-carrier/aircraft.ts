@@ -1,6 +1,6 @@
 'use strict';
 
-export class Aircraft {
+export abstract class Aircraft {
 
   maxAmmo: number;
   currentAmmo: number;
