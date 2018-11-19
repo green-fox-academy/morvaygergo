@@ -1,3 +1,5 @@
+import { Carrier } from "./carrier";
+
 'use strict';
 
 export abstract class Aircraft {
