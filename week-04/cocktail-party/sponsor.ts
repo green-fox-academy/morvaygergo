@@ -1,3 +1,5 @@
+'use strict';
+
 import { Person } from './person'
 
 export class Sponsor extends Person {

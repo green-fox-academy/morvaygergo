@@ -1,3 +1,5 @@
+'use strict';
+
 import { Person } from './person'
 
 export class Mentor extends Person {

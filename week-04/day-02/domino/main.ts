@@ -1,3 +1,5 @@
+'use strict';
+
 import { Domino } from "./domino";
 
 function initializeDominoes(): Domino[] {
