@@ -4,6 +4,7 @@ import { Person } from './person'
 import { Student } from './student'
 import { Mentor } from './mentor'
 import { Sponsor } from './sponsor'
+import { Cohort } from './cohort'
 
 let people = [];
 let mark = new Person('Mark', 46, 'male');

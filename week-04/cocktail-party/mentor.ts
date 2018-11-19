@@ -4,7 +4,7 @@ import { Person } from './person'
 
 export class Mentor extends Person {
 
-  level: string;
+  protected level: string;
 
   constructor(name?: string, age?: number, gender?: string, level?: string) {
     super(name, age, gender);
@@ -14,12 +14,12 @@ export class Mentor extends Person {
     this.level = level || 'intermediate';
   }
 
-  introduce(): void {
+  protected introduce(): void {
     super.introduce();
     console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} ${this.level} level mentor.`);
   }
 
-  getGoal(): void {
+  protected getGoal(): void {
     super.getGoal();
     console.log('Educate brilliant junior software developers.');
   }
