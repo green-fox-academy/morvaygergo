@@ -15,15 +15,15 @@ export class Cohort {
     this.mentors = [];
   }
 
-  protected addStudent(student: Student): void {
+  addStudent(student: Student): void {
     this.students.push(student);
   }
 
-  protected addMentor(mentor: Mentor): void {
+  addMentor(mentor: Mentor): void {
     this.mentors.push(mentor);
   }
 
-  protected info(): void {
+  info(): void {
     console.log(`The ${this.name} cohort has ${this.students.length} students and ${this.mentors.length} mentors.`)
   }
 }

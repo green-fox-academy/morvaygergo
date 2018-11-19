@@ -16,17 +16,17 @@ export class Student extends Person {
     this.skippedDays = 0;
   }
 
-  protected introduce(): void {
+  introduce(): void {
     super.introduce();
     console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} from ${this.previousOrganization} who skipped ${this.skippedDays} days from the course already.`);
   }
 
-  protected getGoal(): void {
+  getGoal(): void {
     super.getGoal();
     console.log('Be a junior software developer.');
   }
 
-  protected skipDays(numberOfDays): void {
+  skipDays(numberOfDays): void {
     this.skippedDays += numberOfDays;
   }
 }

@@ -14,12 +14,12 @@ export class Mentor extends Person {
     this.level = level || 'intermediate';
   }
 
-  protected introduce(): void {
+  introduce(): void {
     super.introduce();
     console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} ${this.level} level mentor.`);
   }
 
-  protected getGoal(): void {
+  getGoal(): void {
     super.getGoal();
     console.log('Educate brilliant junior software developers.');
   }

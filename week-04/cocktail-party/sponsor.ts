@@ -16,17 +16,17 @@ export class Sponsor extends Person {
     this.hiredStudents = 0;
   }
 
-  protected introduce(): void {
+  introduce(): void {
     super.introduce();
     console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} who represents ${this.company} and hired ${this.hiredStudents} students so far.`);
   }
 
-  protected getGoal(): void {
+  getGoal(): void {
     super.getGoal();
     console.log('Hire brilliant junior software developers.');
   }
 
-  protected hire(): void {
+  hire(): void {
     this.hiredStudents += 1;
   }
 }
