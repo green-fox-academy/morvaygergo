@@ -51,7 +51,6 @@ export class Garden {
       })
     }
   }
-
 }
 
 let myGarden = new Garden;
