@@ -1,8 +1,16 @@
+import { Plant } from "./plant";
+
 'use strict';
 
-export class Flower {
+export class Flower extends Plant {
 
-  protected color: string;
+  constructor(color: string) {
+    super(color);
+  }
 
-  
+  getWatered(water: number) {
+    super.getWatered(water);
+    this.waterAmount += water * 0.75;
+  }
+
 }
