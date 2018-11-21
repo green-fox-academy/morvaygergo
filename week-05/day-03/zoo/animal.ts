@@ -15,8 +15,8 @@ export abstract class Animal {
     this.indigenousTo = indigenousTo;
   }
 
-  getName(): void {
-    console.log(`I am a ${this.name}!`);
+  getName(): string {
+    return this.name;
   }
 
   abstract breed(): void
