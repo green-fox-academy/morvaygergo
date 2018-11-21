@@ -19,6 +19,10 @@ export abstract class Animal {
     return this.name;
   }
 
+  introduce(): string {
+    return `I am a(n) ${this.age} years old ${this.size}-sized ${this.gender} ${this.name} from ${this.indigenousTo}.`
+  }
+
   abstract breed(): void
 
   abstract feed(): void
