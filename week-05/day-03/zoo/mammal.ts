@@ -11,7 +11,7 @@ export class Mammal extends Animal {
   }
 
   breed(): string {
-    return 'eggs'
+    return 'giving birth'
   }
 
   feed(): string {
