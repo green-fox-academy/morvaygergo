@@ -7,7 +7,6 @@ interface Reservationy {
 }
 
 class Reservation implements Reservationy {
-  constructor(){}
 
   getDowBooking(): string {
     let days: string[] = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
@@ -23,14 +22,14 @@ class Reservation implements Reservationy {
   }
 }
 
-let res1 = new Reservation;
-let res2 = new Reservation;
-let res3 = new Reservation;
-let res4 = new Reservation;
-let res5 = new Reservation;
-let res6 = new Reservation;
-let res7 = new Reservation;
-let res8 = new Reservation;
+let res1 = new Reservation();
+let res2 = new Reservation();
+let res3 = new Reservation();
+let res4 = new Reservation();
+let res5 = new Reservation();
+let res6 = new Reservation();
+let res7 = new Reservation();
+let res8 = new Reservation();
 
 res1.printReservation();
 res2.printReservation();
@@ -40,4 +39,3 @@ res5.printReservation();
 res6.printReservation();
 res7.printReservation();
 res8.printReservation();
-

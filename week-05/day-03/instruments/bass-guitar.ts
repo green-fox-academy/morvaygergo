@@ -3,17 +3,17 @@ import { StringedInstrument } from "./stringed";
 'use strict';
 
 export class BassGuitar extends StringedInstrument {
-  constructor(name: string) {
-    super(name);
+  constructor(numberOfStrings: number = 4, name: string = 'bass guitar') {
+    super(name, numberOfStrings);
     this.name = name;
-    this.numberOfStrings = 4;
+    this.numberOfStrings = numberOfStrings;
   }
 
-  play(): string {
-    return `The ${typeof this} is a ${this.numberOfStrings}-stringed instrument that goes ${this.sound()}.`
+  play(): void {
+    console.log(`The ${this.name} is a ${this.numberOfStrings}-stringed instrument that goes ${this.sound()}.`);
   }
 
   sound(): string {
-    return 'Duum-duum-duum'
+    return 'Duum-duum-duum';
   }
 }
