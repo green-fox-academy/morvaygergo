@@ -19,11 +19,7 @@ export abstract class Animal {
     console.log(`I am a ${this.name}!`);
   }
 
-  breed(): void {
+  abstract breed(): void
 
-  }
-
-  feed(): void {
-
-  }
+  abstract feed(): void
 }
