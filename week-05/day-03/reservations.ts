@@ -9,8 +9,8 @@ interface Reservationy {
 class Reservation implements Reservationy {
 
   getDowBooking(): string {
-    let days: string[] = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN']
-    return days[Math.floor(Math.random() * 7)]
+    let days: string[] = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+    return days[Math.floor(Math.random() * 7)];
   }
 
   getCodeBooking(): string {
@@ -18,7 +18,7 @@ class Reservation implements Reservationy {
   }
 
   printReservation(): void {
-    console.log(`Booking# ${this.getCodeBooking()} for ${this.getDowBooking()}`)
+    console.log(`Booking# ${this.getCodeBooking()} for ${this.getDowBooking()}`);
   }
 }
 

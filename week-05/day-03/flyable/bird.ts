@@ -1,7 +1,7 @@
 'use strict';
 
 import { Animal } from '../zoo/animal';
-import { Flyable } from './flyable'
+import { Flyable } from './flyable';
 
 export class Birdy extends Animal implements Flyable {
 

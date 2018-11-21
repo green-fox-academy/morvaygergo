@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import { Animal } from './animal';
 
@@ -11,16 +11,16 @@ export class Reptile extends Animal {
   }
 
   breed(): string {
-    return 'eggs'
+    return 'eggs';
   }
 
   feed(): string {
-    return 'sometimes plants but mostly meat'
+    return 'sometimes plants but mostly meat';
   }
 
   isDino(): void {
     if (this.extinct) {
-      console.log('I am a dinosaur!')
+      console.log('I am a dinosaur!');
     }
   }
 }

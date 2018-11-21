@@ -20,10 +20,10 @@ export abstract class Animal {
   }
 
   introduce(): string {
-    return `I am a(n) ${this.age} years old ${this.size}-sized ${this.gender} ${this.name} from ${this.indigenousTo}.`
+    return `I am a(n) ${this.age} years old ${this.size}-sized ${this.gender} ${this.name} from ${this.indigenousTo}.`;
   }
 
-  abstract breed(): void
+  abstract breed(): void;
 
-  abstract feed(): void
+  abstract feed(): void;
 }

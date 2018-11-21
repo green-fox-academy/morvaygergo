@@ -1,6 +1,6 @@
-import { Instrument } from "./instrument";
-
 'use strict';
+
+import { Instrument } from "./instrument";
 
 export abstract class StringedInstrument extends Instrument {
   protected numberOfStrings: number;

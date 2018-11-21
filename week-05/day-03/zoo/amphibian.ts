@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import { Animal } from './animal';
 
@@ -13,10 +13,10 @@ export class Amphibian extends Animal {
   }
 
   breed(): string {
-    return 'eggs and metamorphosis'
+    return 'eggs and metamorphosis';
   }
 
   feed(): string {
-    return 'small insects and such'
+    return 'small insects and such';
   }
 }

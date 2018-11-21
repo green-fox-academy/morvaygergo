@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import { Animal } from './animal';
 
@@ -11,11 +11,11 @@ export class Bird extends Animal {
   }
 
   breed(): string {
-    return 'eggs'
+    return 'eggs';
   }
 
   feed(): string {
-    return 'everything from insects to cattle'
+    return 'everything from insects to cattle';
   }
 
   fly(): void {

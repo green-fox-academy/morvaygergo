@@ -1,6 +1,6 @@
-import { StringedInstrument } from "./stringed";
-
 'use strict';
+
+import { StringedInstrument } from "./stringed";
 
 export class Violin extends StringedInstrument {
   constructor(numberOfStrings: number = 4, name: string = 'violin') {

@@ -1,3 +1,5 @@
+'use strict';
+
 import { Amphibian } from "./amphibian";
 import { Bird } from "./bird";
 import { Fish } from "./fish";
@@ -13,19 +15,19 @@ let reptile = new Reptile('triceratops', 25000000, 'female', 'huge', 'Pangea', t
 
 let zoo: Animal[] = [amphibian, bird, fish, mammal, reptile];
 
-console.log('Who is in the zoo')
+console.log('Who is in the zoo?');
 for (let i = 0; i < zoo.length; i++) {
-  console.log(zoo[i].introduce())
+  console.log(zoo[i].introduce());
 }
 
-console.log('How do you breed?')
+console.log('How do you breed?');
 for (let i = 0; i < zoo.length; i++) {
-  console.log(`The ${zoo[i].getName()} breeds with ${zoo[i].breed()}.`)
+  console.log(`The ${zoo[i].getName()} breeds with ${zoo[i].breed()}.`);
 }
 
-console.log('What do you eat?')
+console.log('What do you eat?');
 for (let i = 0; i < zoo.length; i++) {
-  console.log(`The ${zoo[i].getName()} eats ${zoo[i].feed()}.`)
+  console.log(`The ${zoo[i].getName()} eats ${zoo[i].feed()}.`);
 }
 
 bird.fly();

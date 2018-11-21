@@ -1,7 +1,6 @@
-'use strict'
+'use strict';
 
 import { Animal } from './animal';
-import { runInThisContext } from 'vm';
 
 export class Fish extends Animal {
   protected saltOrFreshWater: string;
@@ -12,22 +11,22 @@ export class Fish extends Animal {
   }
 
   breed(): string {
-    return 'eggs'
+    return 'eggs';
   }
 
   feed(): string {
-    return 'other fish'
+    return 'other fish';
   }
 
   saltOrFresh(): void {
-    console.log('Where do I live?')
+    console.log('Where do I live?');
 
     if (this.saltOrFreshWater === 'salt') {
-      console.log('I live in the oceans')
+      console.log('I live in the oceans');
     } else if (this.saltOrFreshWater === 'fresh') {
-      console.log('I live in rivers and lakes')
+      console.log('I live in rivers and lakes');
     } else {
-      console.log('I don\'t know')
+      console.log('I don\'t know');
     }
   }
 }

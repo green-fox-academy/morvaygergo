@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import { Animal } from './animal';
 
@@ -11,14 +11,14 @@ export class Mammal extends Animal {
   }
 
   breed(): string {
-    return 'giving birth'
+    return 'giving birth';
   }
 
   feed(): string {
-    return 'literally anything'
+    return 'literally anything';
   }
 
   isDomestic(): void {
-    this.domestic ? console.log('I am your pet') : console.log('I live in the wilderness')
+    this.domestic ? console.log('I am your pet') : console.log('I live in the wilderness');
   }
 }
