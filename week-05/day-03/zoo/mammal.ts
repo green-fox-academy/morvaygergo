@@ -19,6 +19,6 @@ export class Mammal extends Animal {
   }
 
   isDomestic(): void {
-    this.domestic ? console.log('I am your pet'): console.log('I live in the wilderness')
+    this.domestic ? console.log('I am your pet') : console.log('I live in the wilderness')
   }
 }

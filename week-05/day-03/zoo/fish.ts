@@ -21,7 +21,7 @@ export class Fish extends Animal {
 
   saltOrFresh(): void {
     console.log('Where do I live?')
-    
+
     if (this.saltOrFreshWater === 'salt') {
       console.log('I live in the oceans')
     } else if (this.saltOrFreshWater === 'fresh') {

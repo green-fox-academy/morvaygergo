@@ -19,6 +19,6 @@ export class Bird extends Animal {
   }
 
   fly(): void {
-    this.canFly ? console.log('Fly birdie fly!'): console.log('Run birdie run!')
+    this.canFly ? console.log('Fly birdie fly!') : console.log('Run birdie run!')
   }
 }
