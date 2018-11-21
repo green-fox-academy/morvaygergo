@@ -5,17 +5,12 @@ import { Instrument } from "./instrument";
 export abstract class StringedInstrument extends Instrument {
   protected numberOfStrings: number;
 
-  constructor(name: string, numberOfStrings: number) {
+  constructor(name: string) {
     super(name);
     this.name = name;
-    this.numberOfStrings = numberOfStrings;
   }
 
-  play(): void {
+  abstract play(): void;
 
-  }
-
-  sound(): void {
-    return this.sound();
-  }
+  abstract sound(): void;
 }
