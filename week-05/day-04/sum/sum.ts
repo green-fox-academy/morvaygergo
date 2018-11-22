@@ -1,9 +1,9 @@
 'use strict';
 
 export class Sum {
-  array: number[];
+  array: any[];
 
-  constructor(array: number[]) {
+  constructor(array: any[]) {
     this.array = array;
   }
 
