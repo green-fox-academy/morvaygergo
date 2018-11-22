@@ -5,7 +5,7 @@ import { Apple } from './apple';
 
 test('return apple', t => {
   let apple = new Apple;
-  
+
   const actual = apple.getApple();
   const expected = 'apple';
 
@@ -15,7 +15,7 @@ test('return apple', t => {
 
 test('return apple', t => {
   let apple = new Apple;
-  
+
   const actual = apple.getApple();
   const expected = 'applee';
 
