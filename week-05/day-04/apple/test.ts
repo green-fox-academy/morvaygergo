@@ -12,3 +12,13 @@ test('return apple', t => {
   t.equal(actual, expected);
   t.end();
 });
+
+test('return apple', t => {
+  let apple = new Apple;
+  
+  const actual = apple.getApple();
+  const expected = 'applee';
+
+  t.equal(actual, expected);
+  t.end();
+});
