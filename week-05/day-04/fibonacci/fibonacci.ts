@@ -10,4 +10,4 @@ export function fibonacci(n: number): number {
   }
 }
 
-console.log(fibonacci(10));
+console.log(fibonacci(0.5));
