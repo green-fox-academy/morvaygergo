@@ -1,5 +1,6 @@
 'use strict';
 
+export { };
 import { Animal } from './animal';
 
 class Farm {
