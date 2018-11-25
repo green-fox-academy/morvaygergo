@@ -21,25 +21,30 @@ export class Carrier {
   }
 
   fill(): void {
-    if (this.ammo <= 0) {
-      throw 'Out of ammo!';
-    } else {
-      while (this.ammo >= 0) {
-        this.aircrafts.forEach(function(value: Aircraft, index: number, array: Aircraft[]): void {
-          if (array[index].isPriority && array[index].currentAmmo < array[index].maxAmmo) {
-            this.ammo = array[index].refill(this.ammo);
-          }
-          if (array[index].currentAmmo < array[index].maxAmmo) {
-            this.ammo = array[index].refill(this.ammo);
-          }
-        })
-      }
+    let ammo = this.ammo;
+
+    this.aircrafts.forEach(function(value: Aircraft, index: number, array: Aircraft[]): void {
+    if (ammo < 12) {
+      console.log('Out of ammo!');
+    } else if (array[index].isPriority && array[index].currentAmmo < array[index].maxAmmo && ammo > 0) {
+      ammo = array[index].refill(ammo);
     }
+    });
+
+    this.aircrafts.forEach(function(value: Aircraft, index: number, array: Aircraft[]): void {
+    if (ammo < 8) {
+      console.log('Out of ammo!');
+    } else if (array[index].currentAmmo < array[index].maxAmmo && ammo > 0) {
+      ammo = array[index].refill(ammo);
+    }
+    });
+
+    this.ammo = ammo;
   }
 
   fight(enemy: Carrier): void {
     let damage: number = 0;
-    this.aircrafts.forEach(function(value: Aircraft, index: number, array: Aircraft[]): void {
+    this.aircrafts.forEach((value: Aircraft, index: number, array: Aircraft[]): void => {
       damage += array[index].fight();
     })
     enemy.health -= damage;
@@ -57,28 +62,44 @@ export class Carrier {
     }
 
     message.concat('Status of aircrafts on board:\n');
+
+    console.log(message);
+
     this.aircrafts.forEach(function(value: Aircraft, index: number, array: Aircraft[]): void {
       message.concat(array[index].getStatus(),'\n');
       maxDamage += array[index].fight();
     })
-    message.concat(`Status of aircraft carrier:\n`,`HP: ${health}, Aircraft count: ${this.aircrafts.length}, Ammo storage: ${this.ammo}, Total damage: ${maxDamage}`)
+
+    message.concat(`Status of aircraft carrier:\n`,`HP: ${this.health}, Aircraft count: ${this.aircrafts.length}, Ammo storage: ${this.ammo}, Total damage: ${maxDamage}`);
+
     return message;
   }
 }
 
-// let myCarrier = new Carrier(100, 100);
-// let enemyCarrier = new Carrier(100, 100);
+let myCarrier = new Carrier(60, 100);
+let enemyCarrier = new Carrier(100, 100);
 
-// console.log(myCarrier.getStatus());
+myCarrier.add(new F16);
+myCarrier.add(new F16);
+myCarrier.add(new F16);
+myCarrier.add(new F16);
+myCarrier.add(new F35);
+myCarrier.add(new F35);
+myCarrier.add(new F35);
+myCarrier.add(new F35);
 
-// myCarrier.add(new F35);
-// myCarrier.add(new F35);
-// myCarrier.add(new F35);
-// myCarrier.add(new F35);
-// myCarrier.add(new F16);
-// myCarrier.add(new F16);
-// myCarrier.add(new F16);
-// myCarrier.add(new F16);
+
+// myCarrier.aircrafts[0].refill(12);
+// myCarrier.aircrafts[1].refill(12);
+
+// myCarrier.fight(enemyCarrier);
+
+// enemyCarrier.getStatus();
+// myCarrier.getStatus();
+
+myCarrier.fill();
+
+console.log(myCarrier, enemyCarrier);
 
 // myCarrier.aircrafts.forEach(function(value: Aircraft, index: number, array: Aircraft[]): void {
 //   array[index].refill(100);

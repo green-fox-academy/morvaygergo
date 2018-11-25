@@ -1,7 +1,7 @@
 'use strict';
-export { };
+export { Animal };
 
-class animal {
+class Animal {
 
   hunger: number;
   thirst: number;

@@ -2,7 +2,7 @@ import { Carrier } from "./carrier";
 
 'use strict';
 
-export abstract class Aircraft {
+export class Aircraft {
 
   maxAmmo: number;
   currentAmmo: number;

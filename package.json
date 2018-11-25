@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/green-fox-academy/morvaygergo/issues"
   },
-  "homepage": "https://github.com/green-fox-academy/morvaygergo#readme"
+  "homepage": "https://github.com/green-fox-academy/morvaygergo#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^4.9.1"
+  }
 }
