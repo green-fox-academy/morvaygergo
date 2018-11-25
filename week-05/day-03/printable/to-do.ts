@@ -1,6 +1,6 @@
 'use strict';
 
-export { ToDo };
+import { Printable } from "./printable";
 
 class Thing {
   name: string;
@@ -15,7 +15,7 @@ class Thing {
   }
 }
 
-class ToDo {
+class ToDo implements Printable {
   private things: Thing[];
 
   constructor() {
@@ -36,4 +36,21 @@ class ToDo {
       }
     }
   }
+
+  printAllFields(): void {
+    this.things.forEach((value: Thing) => {
+      console.log(value);
+    });
+  }
 }
+
+let toDo = new ToDo;
+let thing1 = new Thing('one')
+let thing2 = new Thing('two')
+let thing3 = new Thing('three')
+
+toDo.add(thing1);
+toDo.add(thing2);
+toDo.add(thing3);
+
+toDo.printAllFields();
