@@ -4,7 +4,7 @@ export { };
 import { Animal } from './animal';
 
 class Farm {
-   animals: Animal[]
+  animals: Animal[]
 
   constructor() {
     this.animals = new Array();

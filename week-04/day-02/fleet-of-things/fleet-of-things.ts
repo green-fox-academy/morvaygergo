@@ -11,3 +11,18 @@ let fleet = new Fleet();
 3. [x] Stand up
 4. [x] Eat lunch
 // Hint: You have to create a `print()` method as well */
+
+let milk = new Thing('Get milk');
+let obst = new Thing('Remove the obstacles');
+let stand = new Thing('Stand up');
+let lunch = new Thing('Eat lunch');
+
+stand.complete();
+lunch.complete();
+
+fleet.add(milk);
+fleet.add(obst);
+fleet.add(stand);
+fleet.add(lunch);
+
+fleet.print();

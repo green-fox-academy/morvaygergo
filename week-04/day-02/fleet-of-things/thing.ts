@@ -3,14 +3,14 @@
 export { Thing };
 
 class Thing {
-  private name: string;
-  private completed: boolean;
+  name: string;
+  completed: boolean;
 
-  constructor(name: string){
-      this.name = name;
+  constructor(name: string) {
+    this.name = name;
   }
 
-  public complete() {
-      this.completed = true;
+  public complete(): void {
+    this.completed = true;
   }
 }

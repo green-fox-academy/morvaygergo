@@ -10,7 +10,7 @@ class Blog {
     this.posts = [];
   }
 
-  add(post:BlogPost): void {
+  add(post: BlogPost): void {
     this.posts.push(post);
   }
 
