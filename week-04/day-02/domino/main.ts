@@ -1,6 +1,7 @@
 'use strict';
 
 import { Domino } from "./domino";
+export { };
 
 function initializeDominoes(): Domino[] {
   let dominoes = [];
@@ -13,7 +14,7 @@ function initializeDominoes(): Domino[] {
   return dominoes;
 }
 
-function print(dominoes: Domino[]) {
+function print(dominoes: Domino[]): void {
   dominoes.forEach(function (value) {
     console.log(value);
   });
@@ -26,20 +27,19 @@ let dominoes = initializeDominoes();
 
 print(dominoes);
 
-// console.log(dominoes[dominoes.length - 1].values[0]);
 
 let snake: Domino[] = [];
 
-console.log(typeof dominoes);
-
-while (dominoes !== []) {
-  dominoes.forEach(function (value: Domino, index: number, array: Domino[]) {
-    if (snake === []) {
-      snake.push(array[index]);
-      array.splice(index, 1);
+while (dominoes.length !== 0) {
+  dominoes.forEach(function (value: Domino, index: number, array: Domino[]): void {
+    if (snake.length === 0) {
+      snake.push(value);
+      dominoes.splice(index, 1);
     } else if (snake[snake.length - 1].values[1] === array[index].values[0]) {
       snake.push(array[index]);
+      dominoes.splice(index, 1);
     }
-    console.log(snake);
   })
 }
+
+console.log(snake);
