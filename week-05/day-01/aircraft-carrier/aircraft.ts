@@ -1,7 +1,6 @@
-import { Carrier } from "./carrier";
-
 'use strict';
 
+import { F35 } from "./f35";
 export class Aircraft {
 
   maxAmmo: number;
@@ -27,14 +26,14 @@ export class Aircraft {
   }
 
   getType(): string {
-    return typeof this;
+    return '';
   }
 
   getStatus(): string {
-    return `Type ${this.getType()}, Ammo: ${this.currentAmmo}, Base Damage: ${this.baseDamage}, All Damage: ${this.baseDamage * this.maxAmmo}`
+    return `Type: ${this.getType()}, Ammo: ${this.currentAmmo}, Base Damage: ${this.baseDamage}, All Damage: ${this.baseDamage * this.currentAmmo}`;
   }
 
   isPriority(): boolean {
-    return this.getType() === 'F35';
+    return this instanceof F35;
   }
 }

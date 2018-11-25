@@ -1,10 +1,11 @@
+'use strict';
+
 import { Aircraft } from "./aircraft";
 import { F35 } from "./f35";
 import { F16 } from "./f16";
+export { Carrier };
 
-'use strict';
-
-export class Carrier {
+class Carrier {
 
   aircrafts: Aircraft[];
   ammo: number;
@@ -21,29 +22,32 @@ export class Carrier {
   }
 
   fill(): void {
-    let ammo = this.ammo;
+    let ammo: number = this.ammo;
 
-    this.aircrafts.forEach(function(value: Aircraft, index: number, array: Aircraft[]): void {
-    if (ammo < 12) {
+    if (ammo <= 0) {
       console.log('Out of ammo!');
-    } else if (array[index].isPriority && array[index].currentAmmo < array[index].maxAmmo && ammo > 0) {
-      ammo = array[index].refill(ammo);
-    }
-    });
+    } else {
+      this.aircrafts.forEach((value: Aircraft, index: number, array: Aircraft[]): void => {
+        if (array[index].isPriority() && array[index].currentAmmo < array[index].maxAmmo
+          && ammo >= array[index].maxAmmo - array[index].currentAmmo) {
+          ammo = array[index].refill(ammo);
+        }
+      });
 
-    this.aircrafts.forEach(function(value: Aircraft, index: number, array: Aircraft[]): void {
-    if (ammo < 8) {
-      console.log('Out of ammo!');
-    } else if (array[index].currentAmmo < array[index].maxAmmo && ammo > 0) {
-      ammo = array[index].refill(ammo);
+      this.aircrafts.forEach((value: Aircraft, index: number, array: Aircraft[]): void => {
+        if (array[index].currentAmmo < array[index].maxAmmo
+          && ammo >= array[index].maxAmmo - array[index].currentAmmo) {
+          ammo = array[index].refill(ammo);
+        }
+      });
     }
-    });
 
     this.ammo = ammo;
   }
 
   fight(enemy: Carrier): void {
     let damage: number = 0;
+    
     this.aircrafts.forEach((value: Aircraft, index: number, array: Aircraft[]): void => {
       damage += array[index].fight();
     })
@@ -51,26 +55,27 @@ export class Carrier {
   }
 
   getStatus(): string {
-    let message: string = '';
-    let maxDamage: number = 0;
-    let health: string = '';
+    let totalDamage: number = 0;
 
-    if (this.health > 0) {
-      health = this.health.toString();
+    this.aircrafts.forEach((value: Aircraft, index: number, array: Aircraft[]): void => {
+      totalDamage += array[index].currentAmmo * array[index].baseDamage;
+    });
+
+    let ownStatus: string = `Carrier\nHP: ${this.health}, Aircraft count: ${this.aircrafts.length}, Ammo storage: ${this.ammo}, Total damage: ${totalDamage}\n`;
+
+    let aircraftStatus: string = `Aircrafts`;
+
+    this.aircrafts.forEach((value: Aircraft, index: number, array: Aircraft[]): void => {
+      aircraftStatus += `\n` + `${index + 1}. ` + (array[index].getStatus());
+    });
+
+    let message: string = ''
+
+    if (this.health <= 0) {
+      message = `It's dead Jim :(`;
     } else {
-      health = `It's dead Jim :(`
+      message = ownStatus.concat(aircraftStatus);
     }
-
-    message.concat('Status of aircrafts on board:\n');
-
-    console.log(message);
-
-    this.aircrafts.forEach(function(value: Aircraft, index: number, array: Aircraft[]): void {
-      message.concat(array[index].getStatus(),'\n');
-      maxDamage += array[index].fight();
-    })
-
-    message.concat(`Status of aircraft carrier:\n`,`HP: ${this.health}, Aircraft count: ${this.aircrafts.length}, Ammo storage: ${this.ammo}, Total damage: ${maxDamage}`);
 
     return message;
   }
@@ -88,35 +93,11 @@ myCarrier.add(new F35);
 myCarrier.add(new F35);
 myCarrier.add(new F35);
 
-
-// myCarrier.aircrafts[0].refill(12);
-// myCarrier.aircrafts[1].refill(12);
-
-// myCarrier.fight(enemyCarrier);
-
-// enemyCarrier.getStatus();
-// myCarrier.getStatus();
-
 myCarrier.fill();
 
-console.log(myCarrier, enemyCarrier);
+console.log(myCarrier.getStatus());
 
-// myCarrier.aircrafts.forEach(function(value: Aircraft, index: number, array: Aircraft[]): void {
-//   array[index].refill(100);
-// })
+myCarrier.fight(enemyCarrier);
 
-// myCarrier.aircrafts[0].refill(100);
-
-// console.log(myCarrier.getStatus());
-
-// // try {
-// //   myCarrier.fill();
-// // } catch(e) {
-// //   console.log(e)
-// // }
-
-// // console.log(myCarrier.getStatus());
-
-// myCarrier.fight(enemyCarrier);
-
-// console.log(myCarrier, enemyCarrier);
+console.log(myCarrier.getStatus());
+console.log(enemyCarrier.getStatus());
