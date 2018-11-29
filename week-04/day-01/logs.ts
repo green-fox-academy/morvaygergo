@@ -12,35 +12,32 @@ function readFromFile(fileName: string): string {
   };
 };
 
-function collectIP(): string[] {
-  
-  const uniqueIPs: string[] = [];
+function getPostRatio(): string {
+  let logs = readFromFile('log.txt').split('\n');
 
-  function txtToArray(txt: string): string[] {
-    return txt.split('\n');
-  };
-  
-  
-  function checkIP(ip): void {
+  let split = logs.map(value => value.split('   '));
 
-  };
-  
-  // const fileContent: string = readFromFile('log.txt');
-  // fileContent.split('\n').forEach(function(row): void {
-  //   row.split(' ').forEach(function(splitRow): void {
-  //     if (uniqueIPs.some(isthere)) {
-  //       uniqueIPs.push(splitRow[8])
-  //     };
+  let post = split.filter(value => value[2] === 'POST /');
 
+  let get = split.filter(value => value[2] === 'GET /');
 
-  //   });
-  //   console.log(row);
-  // });
+  return `The get-post ratio is: ${get.length / post.length}`
+}
 
+function uniqeIPs(): string[] {
+  let uniqueIPs: string[] = [];
 
-  return uniqueIPs;
-};
+  let logs = readFromFile('log.txt').split('\n');
 
-// console.log(logs);
+  let split = logs.map(value => value.split('   '));
 
-collectIP();
+  let ips = split.map(value => value[1]);
+
+  ips.forEach((value: string) => {
+    if (!uniqueIPs.includes(value)) {
+      uniqueIPs.push(value);
+    }
+  });
+
+  return uniqueIPs
+}
