@@ -1,0 +1,11 @@
+'use strict';
+
+let list = ['apple', 'banana', 'cat', 'dog'];
+
+let placeholder = document.querySelectorAll('li');
+
+placeholder.forEach((value, index) => {
+  value.textContent = list[index];
+});
+
+console.log(placeholder)
