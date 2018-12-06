@@ -34,7 +34,7 @@ const planetData = [
   },
 ];
 
-planetData.forEach((value, index) => {
+planetData.forEach((value) => {
   if (value.asteroid) {
     let newElement = document.createElement('li');
     newElement.className = value.category;
