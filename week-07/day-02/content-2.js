@@ -9,3 +9,8 @@ placeholder.forEach((value, index) => {
 });
 
 console.log(placeholder)
+
+const limeGreen = document.querySelector('ul');
+
+limeGreen.classList.add('limeGreen');
+
