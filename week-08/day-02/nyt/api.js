@@ -5,7 +5,7 @@ const xhr = new XMLHttpRequest();
 xhr.onload = () => {
   if (xhr.status === 200) {
     const response = JSON.parse(xhr.responseText);
-    let images = document.querySelector('.images');
+    let articles = document.querySelector('.articles');
     for (let i = 0; i < response.data.length; i++) {
       let image = document.createElement('img');
       image.setAttribute('src', `${response.data[i].images.downsized_still.url}`);
