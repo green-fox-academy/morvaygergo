@@ -1,32 +1,34 @@
 'use strict';
 
 const pets = document.querySelector('.pets');
-const yes = document.querySelector('#yes');
-const no = document.querySelector('#no');
-let signup = document.querySelector('#signup')
-let lovecats = document.querySelector('#lovecats')
+const facts = document.querySelector('.facts');
+const buttons = document.querySelector('.buttons');
 let viktor = false;
 let nofacts = false;
 
-
 pets.addEventListener('click', e => {
   signup.disabled = false;
-  
-  if (e.target.id === 'fish') {
+
+  if (e.target.id === 'viktor') {
     viktor = true;
+  } else {
+    viktor = false;
   }
 });
 
-yes.addEventListener('click', e => lovecats.disabled = false);
+facts.addEventListener('click', e => {
+  if (e.target.id === 'yes') {
+    nofacts = false;
+    lovecats.disabled = false;
+  } else {
+    nofacts = true;
+  }
+});
 
-no.addEventListener('click', e => nofacts = true);
-
-signup.addEventListener('click', () => {
+buttons.addEventListener('click', () => {
   if (viktor && nofacts) {
     alert('Sigh, we still added you to the cat facts list');
   } else {
     alert("Thank you, you've successfully signed up for cat facts");
   }
 });
-
-lovecats.addEventListener('click', () => alert("Thank you, you've successfully signed up for cat facts"));
