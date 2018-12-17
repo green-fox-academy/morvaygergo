@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <title>
+    Cocktails
+  </title>
+</head>
+
+<body>
+  <h1>COCKTAILS</h1>
+  <a href="http://localhost:3000/">ALL</a>
+  <a href="http://localhost:3000/?alcohol=gin">GIN</a>
+  <a href="http://localhost:3000/?alcohol=vodka">VODKA</a>
+  <a href="http://localhost:3000/?alcohol=rum">RUM</a>
+  <a href="http://localhost:3000/?alcohol=tequila">TEQUILA</a>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          <h1>NAME</h1>
+        </th>
+        <th>
+          <h1>PRICE</h1>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% cocktails.forEach(item => { %>
+      <tr>
+        <th>
+          <h2>
+            <%= item.name %>
+          </h2>
+          <% if (!item.isAlcoholic) { %>
+          <h4>(non-alcoholic)</h4>
+          <% } %>
+          <p>
+            <%= item.contains %>
+          </p>
+        </th>
+        <th>
+          <p>
+            <%= item.price %> Ft</p>
+        </th>
+        <% }); %>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
