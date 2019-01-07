@@ -1,0 +1,40 @@
+.container {
+  width: 1000px;
+  height: 700px;
+  background-color: lightseagreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+th, td {
+  border: 1px solid darkgray;
+  width: 400px;
+  height: 100px;
+  text-align: center;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+tbody > tr:nth-child(2n) {
+  background-color: gray;
+  color: white;
+}
+
+tbody > tr:nth-child(2n+1) {
+  background-color: white;
+  color: darkgray;
+}
+
+td[data="currency"]::before {
+  content: '$';
+}
