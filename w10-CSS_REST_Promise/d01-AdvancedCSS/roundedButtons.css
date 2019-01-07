@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  height: 500px;
+  background-color: purple;
+  flex-wrap: wrap;
+  padding: 5% 5%;
+  box-sizing: border-box;
+}
+
+button {
+  width: 20%;
+  margin: 5%;
+  height: 20%;
+  font-size: 20px;
+  border-radius: 15px;
+  box-shadow: -5px -5px rgba(200,200,200,0.8) inset;
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:active {
+  filter: brightness(90%);
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.white {
+  background-color: white;
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.light {
+  background-color: lightseagreen;
+}
