@@ -4,14 +4,46 @@
 <head>
   <link rel="stylesheet" type="text/css" href="">
   <meta charset="UTF-8">
-  <title>QUETIONS</title>
+  <title>QUESTIONS</title>
 </head>
 
 <body>
+  <p>Create New Question</p>
+  <form action="">
+    <p>Question</p>
+    <div>
+      <input type="text" name="question" placeholder="Type your question here">
+    </div>
+    <p>Answers</p>
+    <div>
+      <label for="answer1">Answer 1</label>
+      <input type="text" name="answer1" id="answer1" placeholder="Type your answer here">
+      <input type="radio" name="radio" value=1>
+    </div>
+    <div>
+      <label for="answer2">Answer 2</label>
+      <input type="text" name="answer2" id="answer2" placeholder="Type your answer here">
+      <input type="radio" name="radio" value=2>
+    </div>
+    <div>
+      <label for="answer3">Answer 3</label>
+      <input type="text" name="answer3" id="answer3" placeholder="Type your answer here">
+      <input type="radio" name="radio" value=3>
+    </div>
+    <div>
+      <label for="answer4">Answer 4</label>
+      <input type="text" name="answer4" id="answer4" placeholder="Type your answer here">
+      <input type="radio" name="radio" value=4>
+    </div>
+    <div>
+      <input type="button" class="submit" value="SUBMIT">
+    </div>
+  </form>
+
   <p>Manage Questions</p>
   <ul class="questionlist"></ul>
 
-
+  <a href="http://localhost:8080/">Go back to the game</a>
 
   <script src="./static/questions.js" default async></script>
 </body>

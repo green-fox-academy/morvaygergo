@@ -63,3 +63,38 @@ app.get('/questions', (req, res) => {
 app.get('/manage', (req, res) => {
   res.sendFile(path.join(__dirname + '/questions.html'));
 });
+
+app.delete('/questions/:id', (req, res) => {
+  const { id } = req.params;
+  connection.query(`DELETE FROM questions WHERE id = ${id}`, (error1, result1) => {
+    if (error1) {
+      res.status(400).json({ message: "Internal database error" });
+      return;
+    }
+    connection.query(`DELETE FROM answers WHERE question_id = ${id}`, (error2, result2) => {
+      if (error2) {
+        res.status(400).json({ message: "Internal database error" });
+        return;
+      }
+      res.status(200).send();
+    });
+  });
+});
+
+app.post('/questions', (req, res) => {
+  const { question } = req.body;
+  connection.query(`INSERT INTO questions (question) VALUES (${question});`, (error1, result1) => {
+    if (error1) {
+      res.status(400).json({ message: "Internal database error1" });
+      console.log(error1);
+      return;
+    }
+    connection.query(`INSERT INTO answers (answer, question_id, is_correct) VALUES (${req.body.answer1}, ${result1[0].id}, ${req.body.answer1correct}), (${req.body.answer2}, ${result1[0].id}, ${req.body.answer2correct}), (${req.body.answer3}, ${result1[0].id}, ${req.body.answer3correct}), (${req.body.answer4}, ${result1[0].id}, ${req.body.answer4correct});`, (error2, result2) => {
+      if (error) {
+        res.status(400).json({ message: "Internal database error2" });
+        return;
+      }
+      res.status(200).send();
+    });
+  });
+});
