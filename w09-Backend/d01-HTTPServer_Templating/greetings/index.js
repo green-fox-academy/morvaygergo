@@ -10,6 +10,7 @@ app.get('/', (req, res) => {
   // render `home.ejs`
   res.render('home', {
     name: req.query.name || 'Guest'
+    /// /?name=John
   });
 });
 

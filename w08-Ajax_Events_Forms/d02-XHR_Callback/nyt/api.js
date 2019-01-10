@@ -6,7 +6,6 @@ const xhr = new XMLHttpRequest();
 xhr.onload = () => {
   if (xhr.status === 200) {
     const response = JSON.parse(xhr.responseText);
-    // console.log(response.response.docs[0].headline);
     let articles = document.querySelector('.articles');
     for (let i = 0; i < response.response.docs.length; i++) {
       let element = document.createElement('li');
