@@ -4,27 +4,27 @@ const test = require('tape');
 const request = require('supertest');
 const app = require('../routes');
 
-test('groot endpoint without query', (t) => {
+test('yondu endpoint without query', (t) => {
   request(app)
-    .get('/groot')
+    .get('/yondu')
     .expect(400)
     .expect('Content-Type', /json/)
     .end((err, res) => {
       if (err) throw err;
-      t.same(res.body, { error: "I am Groot!" }, 'without query test');
+      t.same(res.body, { error: "no time and speed"  }, 'without query test');
       t.end();
     });
 });
 
 
-test('groot endpoint with query', (t) => {
+test('yondu endpoint with query', (t) => {
   request(app)
-    .get('/groot?message=something')
+    .get('/yondu?distance=100.0&time=10.0')
     .expect(200)
     .expect('Content-Type', /json/)
     .end((err, res) => {
       if (err) throw err;
-      t.same(res.body, { received: "something", translated: "I am Groot!" }, 'with query test');
+      t.same(res.body, { distance: "100.0", time: "10.0", speed: "10" }, 'with query test');
       t.end();
     });
 });
